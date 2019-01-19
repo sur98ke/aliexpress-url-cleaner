@@ -1,17 +1,17 @@
 {
   "applications": {
     "gecko": {
-      "id": "aliexpress-url-cleaner@the-universal-as-knowledge.github.com"
+      "id": "aliexpress-url-cleaner@sur98ke.github.com"
     }
   },
   "manifest_version": 2,
   "name": "Aliexpress URL cleaner",
-  "version": "1.0",
-  "description": "Removes intrusive query params from Aliexpress URLs.",
+  "version": "1.1",
+  "description": "Cleans Aliexpress URLs for items.",
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "*://www.aliexpress.com/"
+    "*://*.aliexpress.com/"
   ],
   "background": {
     "scripts": [
