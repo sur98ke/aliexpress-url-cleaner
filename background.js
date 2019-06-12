@@ -2,10 +2,17 @@ function removeQueryParams(requestDetails) {
     console.log("removeQueryParams");
   const url = requestDetails.url;
 
-  const re_good = new RegExp(
+  const re_good_old = new RegExp(
     "^\\w+://\\w+\\.aliexpress\\.com/item/[^/?]+/\\d+\\.html$"
     );
-  if (url.match(re_good)){
+  if (url.match(re_good_old)){
+    return {};
+    }
+
+  const re_good_new = new RegExp(
+    "^\\w+://\\w+\\.aliexpress\\.com/item/\\d+\\.html$"
+    );
+  if (url.match(re_good_new)){
     return {};
     }
 
@@ -18,7 +25,7 @@ function removeQueryParams(requestDetails) {
     }
   const protohost = res[1];
   const productID = res[2];
-  const cleanurl = protohost + "/item/_/" + productID + ".html";
+  const cleanurl = protohost + "/item/" + productID + ".html";
   return {
     redirectUrl: cleanurl
   };
